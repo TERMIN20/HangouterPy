@@ -59,6 +59,7 @@ def get():
 
 @app.route("/schedule")
 def schedule():
+    eventsUpdate()
     return render_template('schedule.html', events=events)
 
 
