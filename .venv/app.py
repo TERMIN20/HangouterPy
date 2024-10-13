@@ -4,6 +4,8 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 import socket
 
+
+user = "anonymous"
 conn = sqlite3.connect("users.db")
 cur = conn.cursor()
 
@@ -69,15 +71,25 @@ def login():
 # handles the submission of the login page
 @app.route('/submit', methods=["GET"])
 def submit():
+    nullcode = "/~n"
     inputU = request.args["username"]
     inputP = request.args["password"]
     message = users.recv(1024).decode()
+    while message != "UsernameReq":
+        users.send(nullcode.encode())
+        message = users.recv(1024).decode()
+        print("lookingUserReq" + message)
+
     users.send(inputU.encode())
     message = users.recv(1024).decode()
     users.send(inputP.encode())
+    print("sent")
     status = users.recv(1024).decode()
     if status == "successful":
         print("yay")
+        user = inputU
+
+
     # Code to compare correct password with user input
     # username =
     # password =
@@ -85,7 +97,7 @@ def submit():
     #     return render_template('schedule.html')
     # else:
     # Failed login case: I have it set to reload the login page as a placeholder for now
-    return render_template('login.html')
+    return redirect('/schedule')
 
 @app.route('/input')
 def input():
@@ -98,4 +110,19 @@ def submit2():
     activityName = request.args["activityName"]
     date = request.args["start"]
     print(date)
+
+    message = users.recv(1024).decode()
+    print(message)
+    while message != "EventReq":
+        users.send("/~n")
+        message = users.recv(1024).decode()
+        print(message)
+    users.send(activityName.encode())
+    message = users.recv(1024).decode()
+    print(message)
+    users.send(date.encode())
+    message = users.recv(1024).decode()
+    print(message)
+    users.send(user.encode())
+
     return redirect('/schedule')
