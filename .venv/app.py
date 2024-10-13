@@ -43,3 +43,7 @@ def submit():
     print(username)
     print(password)
 
+@app.route('/input', methods=["GET"])
+def input():
+    date = request.args.get["start"]
+    print(date)
