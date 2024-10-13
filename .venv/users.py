@@ -1,6 +1,13 @@
-import sqlite3
+import socket
+
+users = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+users.connect(("localhost", 5000))
 
 
-def login():
-    usr = input("Username")
-    pswd = input("Password")
+message = users.recv(1024).decode()
+users.send(input(message).encode())
+message = users.recv(1024).decode()
+users.send(input(message).encode())
+print(users.recv(1024).decode())
+
+
