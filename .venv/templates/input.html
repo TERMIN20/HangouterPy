@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Activity</title>
+</head>
+<body>
+    <center>
+        <h1>Add Activity</h1>
+        <form action="/submit2" method="GET">
+            <label for="activityName">Activity Name</label>
+            <input type="text" id="activityName" name="activityName" required><br><br>
+            <input type="date" id="start" name="start" aria-required="true" required/>
+            <script> 
+                const d = new Date() 
+                document.getElementById("start").ariaValueMin = d
+                //document.getElementById("start").ariaValueNow = d
+            </script>
+            <button type="submit"> Submit </button>
+        </form>
+    </center>
+</body>
+</html>
