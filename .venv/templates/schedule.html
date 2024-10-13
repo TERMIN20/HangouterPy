@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Schedule</title>
     <link rel="stylesheet" src="
     https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js
     ">
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+        box-sizing: border-box;
+          float: left;
+          padding: 10px;
+        }
+        
+        .left {
+          width: 25%;
+        }
+        
+        .right {
+          width: 75%;
+        }
+        
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
     <script src="
     https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js
     "></script>
 </head>
 <body>
+    <div class = "row">
+        <div class="column left">
+            <p>iloveyou </p>
+        </div>
+    <div class = "column right">
     <div id = "schedule"></div>
     <script>
         let scheduleEl = document.getElementById('schedule')
@@ -28,8 +59,9 @@
                 {% endfor %}
             ]
         })
-
         schedule.render();
     </script>
+    </div>
+    </div> 
 </body>
 </html>
