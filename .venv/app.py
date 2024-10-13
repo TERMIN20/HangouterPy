@@ -2,6 +2,17 @@ from flask import Flask, render_template, request
 
 app = Flask('Hangouter')
 
+events = [
+    {
+        'activityName' : 'sample Name',
+        'date' : '2024-10-13',
+    },
+    {
+        'activityName' : 'sleepy',
+        'date' : '2024-10-12',
+    }
+]
+
 
 @app.route("/")
 # uses index.html webpage
@@ -16,7 +27,7 @@ def form():
 
 @app.route("/schedule")
 def schedule():
-    return render_template('')
+    return render_template('schedule.html', events = events)
 
 
 @app.route("/login")
@@ -31,3 +42,4 @@ def submit():
     password = request.args.get["password"]
     print(username)
     print(password)
+
