@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Friendule Login</title>
+    <title>Create an Account</title>
 </head>
 <body>
-    <center>
-        <h1>Login</h1>
-        <form action="/submit" method="GET">
+<center>
+        <h1>Create Account</h1>
+        <form action="/login" method="GET">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Create">
         </form>
-        <form action="/input">
-            <input type="submit" value="Create Account">
+        <form action="/login">
+            <input type="submit" value="Cancel">
         </form>
     </center>
 </body>

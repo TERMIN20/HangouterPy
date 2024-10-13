@@ -47,6 +47,7 @@ def submit():
     # if inputU == username:
     return render_template('schedule.html', events=events)
     # else:
+    # Failed login case: I have it set to reload the login page as a placeholder for now
     #     return render_template('login.html')
 
 @app.route('/input')
@@ -63,3 +64,12 @@ def submit2():
     events.append({'activityName' : ctivityName,
                      'date' : date})
     return render_template('schedule.html', events=events)
+
+@app.route('/createAccount', methods=["GET"])
+def create():
+    inputU = request.args["username"]
+    inputP = request.args["password"]
+    # Write code that compares username and password to already existing database of account credentials
+    # if successful, goes back to login where they can use their new login:
+    return render_template("login.html")
+    
