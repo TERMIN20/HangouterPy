@@ -53,9 +53,13 @@
 <body>
     <div class = "row">
         <div class="column left">
-            <form action="/login" method="GET">
-                <input type="submit" value="Create">
-            </form>
+            <h1>Upcoming Activities</h1>
+            <p>iloveyou</p>
+            {% for event in events %}
+                <p>Activity Name: {{event.activityName}}</p>
+                <p>Date: {{event.date}}</p>
+
+            {% endfor %}
         </div>
     <div class = "column right">
     <div id = "schedule"></div>
