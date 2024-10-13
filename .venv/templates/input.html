@@ -14,7 +14,7 @@
             <input type="date" id="start" name="start" aria-required="true" required/>
             <script> 
                 const d = new Date() 
-                document.getElementById("start").ariaValueMin = d
+                document.getElementById("start").setAttribute("min", d)
                 //document.getElementById("start").ariaValueNow = d
             </script>
             <button type="submit"> Submit </button>

@@ -65,10 +65,16 @@ def submit2():
                      'date' : date})
     return render_template('schedule.html', events=events)
 
+@app.route('/createPage')
+def createPage():
+    return render_template('createAccount.html')
+
 @app.route('/createAccount', methods=["GET"])
 def create():
     inputU = request.args["username"]
     inputP = request.args["password"]
+    print(inputU)
+    print(inputP)
     # Write code that compares username and password to already existing database of account credentials
     # if successful, goes back to login where they can use their new login:
     return render_template("login.html")
