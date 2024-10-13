@@ -54,3 +54,11 @@ app.route('/input', methods=["GET"])
 def input():
     date = request.args.get["start"]
     print(date)
+
+@app.route('/createAccount', methods=["GET"])
+def create():
+    inputU = request.args["username"]
+    inputP = request.args["password"]
+    # Write code that compares username and password to already existing database of account credentials
+    # if successful, goes back to login where they can use their new login:
+    return render_template("login.html")

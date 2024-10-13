@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a430d5f9-f0ba-4e6d-ba04-6a27fb2fbb54" name="Changes" comment="Added the input to schedule, leads to login for now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a430d5f9-f0ba-4e6d-ba04-6a27fb2fbb54" name="Changes" comment="Added a create account button that leads to /input currently">
+      <change afterPath="$PROJECT_DIR$/.venv/templates/createAccount.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728816184317</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added a create account button that leads to /input currently">
+      <option name="closed" value="true" />
+      <created>1728817737065</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728817737065</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +176,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="Login Page" />
     <MESSAGE value="Added the input to schedule, leads to login for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the input to schedule, leads to login for now" />
+    <MESSAGE value="Added a create account button that leads to /input currently" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a create account button that leads to /input currently" />
   </component>
 </project>
