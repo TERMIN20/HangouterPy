@@ -23,8 +23,10 @@ def handle_connection(c):
         c.send("UserReq".encode())
         user = c.recv(1024).decode()
         print("user " + user)
+        params = [user, eventname, date]
         cur.execute("INSERT INTO eventdata (username, activityname, date) VALUES (?, ?, ?)", (user, eventname, date))
-
+        conn.commit()
+        print("curexecuted")
 
     c.send("UsernameReq".encode())
     username = c.recv(1024).decode()
