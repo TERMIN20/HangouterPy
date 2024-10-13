@@ -4,13 +4,14 @@ import socket
 import threading
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("localhost", 5000))
+server.bind(("localhost", 9999))
 
 server.listen()
 
 def handle_connection(c):
     c.send("Username: ".encode())
     username = c.recv(1024).decode()
+    print(username)
 
     c.send("Password: ".encode())
     password = c.recv(1024)
@@ -21,11 +22,13 @@ def handle_connection(c):
 
     cur.execute("SELECT * FROM userdata WHERE username = ? AND password = ?", (username, password))
 
+
     if cur.fetchall():
-        c.send("Login successful".encode())
+        print(cur.fetchall())
+        c.send("successful".encode())
 
     else:
-        c.send("Login failed :(".encode())
+        c.send("failed".encode())
 
 while True:
     client, addr = server.accept()
