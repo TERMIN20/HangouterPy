@@ -1,0 +1,37 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_12_2024_8_01_PM_[Changes]" date="1728788536468" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_8_01_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/12/2024 8:01 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Lib/site-packages/pip-23.2.1.dist-info/METADATA" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Lib/site-packages/pip-23.2.1.virtualenv" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Scripts/pip3.exe" />
+    <option name="AFTER_PATH" value=".venv/Scripts/pip3.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_8_01_PM_[Changes]/pip3.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Lib/site-packages/pip-23.2.1.dist-info/WHEEL" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Lib/site-packages/pip-23.2.1.dist-info/INSTALLER" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Scripts/pip.exe" />
+    <option name="AFTER_PATH" value=".venv/Scripts/pip.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_8_01_PM_[Changes]/pip.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Scripts/pip-3.13.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Lib/site-packages/pip-23.2.1.dist-info/RECORD" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".venv/Scripts/pip3.13.exe" />
+    <option name="AFTER_PATH" value=".venv/Scripts/pip3.13.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_8_01_PM_[Changes]/pip3.13.exe" />
+  </binary>
+</changelist>
