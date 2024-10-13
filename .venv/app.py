@@ -6,7 +6,7 @@ import socket
 
 
 user = "anonymous"
-conn = sqlite3.connect("users.db")
+conn = sqlite3.connect("users.db", check_same_thread=False)
 cur = conn.cursor()
 
 # Add Tables to db
@@ -28,9 +28,8 @@ CREATE TABLE IF NOT EXISTS eventdata (
 """)
 
 
-#connect to db server
-users = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-users.connect(("localhost", 9999))
+
+
 
 
 app = Flask('Hangouter')
@@ -71,9 +70,14 @@ def login():
 # handles the submission of the login page
 @app.route('/submit', methods=["GET"])
 def submit():
+    # connect to db server
+    users = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    users.connect(("localhost", 9999))
+
     nullcode = "/~n"
     inputU = request.args["username"]
     inputP = request.args["password"]
+
     message = users.recv(1024).decode()
     while message != "UsernameReq":
         users.send(nullcode.encode())
@@ -89,7 +93,7 @@ def submit():
         print("yay")
         user = inputU
 
-
+    users.close()
     # Code to compare correct password with user input
     # username =
     # password =
@@ -105,8 +109,17 @@ def input():
     #date = request.args["start"]
     #print(date)
 
+def eventsUpdate():
+    events.clear()
+    for row in  cur.execute("SELECT activityname, date FROM eventdata ORDER BY id"):
+        print(row[0], row[1])
+        events.append({'activityName': row[0], 'date': row[1]})
+
 @app.route('/submit2', methods =["GET"])
 def submit2():
+    users = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    users.connect(("localhost", 9999))
+
     activityName = request.args["activityName"]
     date = request.args["start"]
     print(date)
@@ -114,7 +127,7 @@ def submit2():
     message = users.recv(1024).decode()
     print(message)
     while message != "EventReq":
-        users.send("/~n")
+        users.send("/~n".encode())
         message = users.recv(1024).decode()
         print(message)
     users.send(activityName.encode())
@@ -124,5 +137,7 @@ def submit2():
     message = users.recv(1024).decode()
     print(message)
     users.send(user.encode())
+
+    eventsUpdate()
 
     return redirect('/schedule')
