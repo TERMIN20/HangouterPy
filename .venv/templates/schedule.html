@@ -7,7 +7,6 @@
     <link rel="stylesheet" src="
     https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js
     ">
-    <!--<link rel="stylesheet" href="styles.css">-->
     <style>
         * {
           box-sizing: border-box;
@@ -40,7 +39,13 @@
 <body>
     <div class = "row">
         <div class="column left">
-            <p>iloveyou </p>
+            <h1>Upcoming Activities</h1>
+            <p>iloveyou</p>
+            {% for event in events %}
+                <p>Activity Name: {{event.activityName}}</p>
+                <p>Date: {{event.date}}</p>
+                    
+            {% endfor %}
         </div>
     <div class = "column right">
     <div id = "schedule"></div>

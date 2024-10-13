@@ -21,7 +21,7 @@ def home():
 
 
 # returns username and password
-def form():
+def get():
     return render_template_string(open('login.html').read())
 
 
@@ -38,12 +38,16 @@ def login():
 # handles the submission of the login page
 @app.route('/submit', methods=["GET"])
 def submit():
-    username = request.args.get["username"]
-    password = request.args.get["password"]
-    print(username)
-    print(password)
-
-@app.route('/input', methods=["GET"])
+    inputU = request.args["username"]
+    inputP = request.args["password"]
+    # Code to compare correct password with user input
+    # username =
+    # password =
+    # if inputU == username:
+    #     return render_template('schedule.html')
+    # else:
+    #     return render_template('login.html')
+app.route('/input', methods=["GET"])
 def input():
     date = request.args.get["start"]
     print(date)
