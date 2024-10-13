@@ -44,9 +44,12 @@ def submit():
     # username =
     # password =
     # if inputU == username:
-    #     return render_template('schedule.html')
+    # Successful login: loads the schedule app
+    return render_template('schedule.html')
     # else:
+    # Failed login case: I have it set to reload the login page as a placeholder for now
     #     return render_template('login.html')
+
 app.route('/input', methods=["GET"])
 def input():
     date = request.args.get["start"]
