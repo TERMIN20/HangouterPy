@@ -27,7 +27,7 @@ def form():
 
 @app.route("/schedule")
 def schedule():
-    return render_template('schedule.html', events = events)
+    return render_template('schedule.html', events=events)
 
 
 @app.route("/login")
